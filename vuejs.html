@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>VueJS</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script></head>
+<body>
+	<div id="app">
+	  <p>{{ foo }}</p>
+	  <div v-bind:style="{ color: activeColor, fontSize: fontSize + 'px' }">
+	  	Je ne comprend rien à VueJS
+	  </div>
+	  <img src="$monImage">
+
+	  <!-- this will no longer update `foo`! -->
+	  <button v-on:click="changeCol">Change it</button>
+	</div>
+</body>
+<script type="text/javascript">
+new Vue({
+	el: '#app',
+	data: {
+	    a: 25252,
+	  	activeColor: 'red',
+	  	fontSize: 30
+  	},
+  	created: function () {
+    	// `this` points to the vm instance
+    	console.log('a is: ' + this.a)
+  	},
+  	watch: {
+  		changeCol: function() {
+  			foo : bonjour;
+  			this.fontSize = 5;
+  		}
+  	}
+})
+
+var monImage = document.querySelector('img');
+
+var mesEntetes = new Headers();
+mesEntetes.append('Content-Type', 'image/jpeg');
+
+var monInit = { method: 'GET',
+               headers: myHeaders,
+               mode: 'cors',
+               cache: 'default' };
+
+var maRequete = new Request('fleur.jpg');
+
+fetch(maRequete, monInit).then(function(reponse) {
+  return response.blob();
+})
+.then(function(myBlob) {
+  var objectURL = URL.createObjectURL(myBlob);
+  myImage.src = objectURL;
+});
+
+</script>
+</html>
